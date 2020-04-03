@@ -7,7 +7,7 @@ public class HappyNumber {
 
   public static void main(String[] args) {
     int n = 19;
-    System.out.println("n "+n+" is a  happy number: "+isHappy(n));
+    System.out.println("Number "+n+" is a  happy number: "+isHappy(n));
   }
 
   public static boolean isHappy(int n) {
