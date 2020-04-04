@@ -1,4 +1,4 @@
-package easy.solutions;
+package thirtyday.challenge.solutions;
 
 public class MaximumSubarray {
 
