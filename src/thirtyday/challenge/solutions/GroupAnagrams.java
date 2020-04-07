@@ -19,29 +19,22 @@ public class GroupAnagrams {
   public static List<List<String>> groupAnagrams(String[] strs) {
     List<List<String>> result = new ArrayList<List<String>>();
 
-    Set<Integer> ignoredIndex = new HashSet<>();
-
     Map<String, Set<Integer>> anagramMap = new HashMap<String, Set<Integer>>();
 
     for(int i=0; i<strs.length; i++) {
 
-      if(!ignoredIndex.contains(i)) {
-        char [] c = strs[i].toCharArray();
+      char [] c = strs[i].toCharArray();
 
-        Arrays.sort(c);
+      Arrays.sort(c);
 
-        if(!anagramMap.containsKey(String.valueOf(c))) {
-          Set<Integer> s = new HashSet<>();
-          s.add(i);
-          anagramMap.put(String.valueOf(c), s);
-        } else {
-          Set<Integer> set = anagramMap.get(String.valueOf(c));
-          set.add(i);
-
-          anagramMap.put(String.valueOf(c), set);
-
-          ignoredIndex.add(i);
-        }
+      if(!anagramMap.containsKey(String.valueOf(c))) {
+        Set<Integer> s = new HashSet<>();
+        s.add(i);
+        anagramMap.put(String.valueOf(c), s);
+      } else {
+        Set<Integer> set = anagramMap.get(String.valueOf(c));
+        set.add(i);
+        anagramMap.put(String.valueOf(c), set);
       }
     }
 
